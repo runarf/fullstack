@@ -9,6 +9,7 @@ import {
   Route
 } from 'react-router-dom';
 import { Grommet, Box } from 'grommet';
+import Quiz from './components/Quiz';
 
 const Homepage = () => (
   <Box>
@@ -34,7 +35,7 @@ class App extends Component {
           <Route
             path="/"
             exact
-            component={Homepage}
+            component={Quiz}
           />
           <Route
             path="/about/"
