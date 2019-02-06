@@ -40,7 +40,7 @@ class Quiz extends React.Component {
 
   async componentDidMount() {
     const response = await fetch(
-      'http://www.nokeynoshade.party/api/queens/all'
+      'https://www.nokeynoshade.party/api/queens/all'
     );
     const queens = await response.json();
     this.setState({
