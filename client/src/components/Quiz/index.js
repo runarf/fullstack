@@ -64,16 +64,6 @@ class Quiz extends React.Component {
   getRandomQueen = () => {
     const currentQueen = this.getRandom();
 
-    fetch(currentQueen.image_url)
-      .then(() =>
-        console.log('image works')
-      )
-      .catch(err =>
-        console.log(
-          'image does not work'
-        )
-      );
-
     const alternative1 = this.getRandom();
     const alternative2 = this.getRandom();
 
@@ -111,7 +101,6 @@ class Quiz extends React.Component {
       alternatives,
       background
     } = this.state;
-    console.log(currentQueen);
     return (
       <Grommet>
         <Box
@@ -125,9 +114,10 @@ class Quiz extends React.Component {
               <Box>
                 <Box height="small">
                   <Image
-                    src={
-                      currentQueen.image_url
-                    }
+                    src={currentQueen.image_url.replace(
+                      /^http:/,
+                      'https:'
+                    )}
                     fit="contain"
                   />
                 </Box>
